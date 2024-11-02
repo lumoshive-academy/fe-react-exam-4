@@ -11,11 +11,12 @@ const TaskList = ({ tasks }) => (
         <span style={{ textDecoration: task.done ? "line-through" : "none" }}>
           {task.text}
         </span>
-        <Button
-          variant={task.done ? "secondary" : "success"}
-        >
-          {task.done ? "Undo" : "Done"}
-        </Button>
+        <div className="d-flex">
+          <Button variant={task.done ? "secondary" : "success"}>
+            {task.done ? "Undo" : "Done"}
+          </Button>
+          <Button variant="outline-danger ms-2">Delete</Button>
+        </div>
       </ListGroupItem>
     ))}
   </ListGroup>
